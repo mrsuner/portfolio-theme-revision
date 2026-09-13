@@ -1,3 +1,5 @@
+import '../main.css';
+
 (function(window, document, KB, $, hljs){
     // Adding logo through js if php templates have been overridden by other plugins
     if (!document.body.classList.contains("TR")){

@@ -1,4 +1,8 @@
 # ThemeRevision for Kanboard
+
+> This is the public `mrsuner/portfolio-theme-revision` fork of
+> `greyaz/ThemeRevision`. It preserves the upstream MIT License and uses Vite
+> for reproducible asset builds. See [FORK.md](./FORK.md) for maintenance rules.
 ![Release](https://img.shields.io/github/v/release/greyaz/ThemeRevision?color=%2332ab3d&style=flat-square)
 ![License](https://img.shields.io/github/license/greyaz/ThemeRevision?color=%233860f4&style=flat-square)
 ![Kanboard Support Good](https://img.shields.io/static/v1?label=Kanboard&message=%E2%89%A51.2.22%20Good&color=green&style=flat-square)
@@ -41,6 +45,23 @@ ThemeRevision is a task-first and high-quality theme for [Kanboard](https://gith
    > `git clone https://github.com/greyaz/ThemeRevision.git` into `your_kanboard_root/plugins`.
 * ***Your own logo?***  
 ThemeRevision utilize the file `favicon.png` in `your_kanboard_root/assets/img` as the head logo, replace it if needed.
+
+## Frontend development
+
+The fork builds the existing native CSS and JavaScript with Vite. Kanboard
+continues to load the stable `Asset/main.min.css` and `Asset/main.min.js` paths.
+
+```bash
+npm install
+npm run build       # production bundle
+npm run dev         # watch mode with source maps
+npm run check       # production build verification
+```
+
+Do not edit `Asset/main.min.css` or `Asset/main.min.js` directly. Edit
+`Asset/dev/main.css`, the ordered files in `Asset/dev/css/`, or
+`Asset/dev/js/main.js`, then rebuild. PHP no longer writes or deletes assets at
+request time.
 
 ## Upgrading
 * ***I have customized CSS files***  
