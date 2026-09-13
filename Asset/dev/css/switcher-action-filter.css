@@ -47,6 +47,23 @@
 	line-height: 1rem;
     margin: 0;
 }
+
+/* On narrow devices the fixed view navigation becomes an explicit horizontal
+ * scroll track. Keeping item widths intrinsic prevents a wide board table from
+ * compressing or clipping links such as Gantt and plugin-provided views. */
+@media (max-width: 600px) {
+	.project-header > .views-switcher-component > .views > li,
+	.page > .page-header > ul > li,
+	.page > #main > .page-header > ul > li {
+		flex: 0 0 auto;
+	}
+
+	.page > .page-header ul a,
+	.page > #main > .page-header ul a {
+		width: auto;
+		min-width: 6rem;
+	}
+}
 .page-header li, .menu-inline li {
 	padding: 0;
 	border-left: var(--style-border);
